@@ -15,6 +15,9 @@
 
 ![Parte 1](https://img.shields.io/badge/Parte%201-3%20ejercicios-success?style=flat-square)
 ![Parte 2](https://img.shields.io/badge/Parte%202-3%20ejercicios-success?style=flat-square)
+![Parte 3](https://img.shields.io/badge/Parte%203-4%20ejercicios-success?style=flat-square)
+![Total](https://img.shields.io/badge/Total-10%20ejercicios-blueviolet?style=flat-square)
+![Estado](https://img.shields.io/badge/estado-completo-brightgreen?style=flat-square)
 ![Dependencias](https://img.shields.io/badge/dependencias-ninguna-brightgreen?style=flat-square)
 
 **🏛️ Universidad Técnica de Ambato · Facultad de Ingeniería en Sistemas, Electrónica e Industrial**
@@ -35,6 +38,7 @@
 | 🗓️ **Ciclo académico** | Julio 2026 – Diciembre 2026 |
 | 📅 **Fecha Parte 1** | 04/11/2026 |
 | 📅 **Fecha Parte 2** | 05/11/2026 |
+| 📅 **Fecha Parte 3** | 06/11/2026 |
 | 🔗 **Repositorio** | [LeyberP/APE_5_Primera_Parte](https://github.com/LeyberP/APE_5_Primera_Parte) |
 
 ---
@@ -55,6 +59,11 @@
   - [Ejercicio 1. Registro de estudiantes y calificaciones](#p2-ejercicio-1)
   - [Ejercicio 2. Registro de productos con modo *append*](#p2-ejercicio-2)
   - [Ejercicio 3. Sistema de registro de ventas](#p2-ejercicio-3)
+- [📙 Parte 3 – Manejo de archivos y flujos de datos (`java.io`)](#parte-3)
+  - [Ejercicio 1. Exploración y gestión de metadatos con `File`](#p3-ejercicio-1)
+  - [Ejercicio 2. Escritura estructurada por líneas con `BufferedWriter`](#p3-ejercicio-2)
+  - [Ejercicio 3. Control del modo de apertura (*append* vs sobrescribir)](#p3-ejercicio-3)
+  - [Ejercicio 4. Ciclo de vida completo y borrado seguro](#p3-ejercicio-4)
 - [▶️ Instrucciones de ejecución](#instrucciones-de-ejecución)
 - [🧠 Conceptos aplicados](#conceptos-aplicados)
 - [⚠️ Notas importantes](#notas-importantes)
@@ -70,14 +79,18 @@
 
 | Parte | Categoría | Descripción | Enlaces |
 |:-:|---|---|---|
-| 📘 1 | Ejercicio 1 | Crear `curso.txt` | [Enunciado y resolución](#ejercicio-1-crear-un-fichero-en-java) · [`CrearCurso.java`](Codigos/CrearCurso.java) |
-| 📘 1 | Ejercicio 2 | Escribir en `estudiantes.txt` | [Enunciado y resolución](#ejercicio-2-escribir-información-en-un-fichero) · [`EscribirArchivo.java`](Codigos/EscribirArchivo.java) |
-| 📘 1 | Ejercicio 3 | Eliminar `estudiantes.txt` | [Enunciado y resolución](#ejercicio-3-eliminar-un-fichero-en-java) · [`EliminarArchivo.java`](Codigos/EliminarArchivo.java) |
-| 📗 2 | Ejercicio 1 | Registrar 3 estudiantes y sus calificaciones en `estudiantes.txt` | [Enunciado y resolución](#p2-ejercicio-1) · [`Ejercicio1.java`](Codigos/Ejercicio1.java) |
-| 📗 2 | Ejercicio 2 | Registrar productos en `productos.txt` (modo *append*) | [Enunciado y resolución](#p2-ejercicio-2) · [`Ejercicio2.java`](Codigos/Ejercicio2.java) |
-| 📗 2 | Ejercicio 3 | Registrar ventas con descuento en `ventas.txt` | [Enunciado y resolución](#p2-ejercicio-3) · [`Ejercicio3.java`](Codigos/Ejercicio3.java) |
-| 💻 | Código fuente | Los seis programas Java | [`Codigos/`](Codigos/) |
-| 📄 | Documentación | Enunciados e informes de resolución de ambas partes | [`docs/`](docs/) |
+| 📘 1 | Ejercicio 1 | Crear `curso.txt` | [Enunciado y resolución](#ejercicio-1-crear-un-fichero-en-java) · [`CrearCurso.java`](Codigos/Parte%201/CrearCurso.java) |
+| 📘 1 | Ejercicio 2 | Escribir en `estudiantes.txt` | [Enunciado y resolución](#ejercicio-2-escribir-información-en-un-fichero) · [`EscribirArchivo.java`](Codigos/Parte%201/EscribirArchivo.java) |
+| 📘 1 | Ejercicio 3 | Eliminar `estudiantes.txt` | [Enunciado y resolución](#ejercicio-3-eliminar-un-fichero-en-java) · [`EliminarArchivo.java`](Codigos/Parte%201/EliminarArchivo.java) |
+| 📗 2 | Ejercicio 1 | Registrar 3 estudiantes y sus calificaciones en `estudiantes.txt` | [Enunciado y resolución](#p2-ejercicio-1) · [`Ejercicio1.java`](Codigos/Parte%202/Ejercicio1.java) |
+| 📗 2 | Ejercicio 2 | Registrar productos en `productos.txt` (modo *append*) | [Enunciado y resolución](#p2-ejercicio-2) · [`Ejercicio2.java`](Codigos/Parte%202/Ejercicio2.java) |
+| 📗 2 | Ejercicio 3 | Registrar ventas con descuento en `ventas.txt` | [Enunciado y resolución](#p2-ejercicio-3) · [`Ejercicio3.java`](Codigos/Parte%202/Ejercicio3.java) |
+| 📙 3 | Ejercicio 1 | Comprobar, crear y consultar `datos/prueba.txt` | [Enunciado y resolución](#p3-ejercicio-1) · [`Ejercicio1.java`](Codigos/Parte3/Ejercicio1.java) |
+| 📙 3 | Ejercicio 2 | Escribir 5 asignaturas en `materias.txt` | [Enunciado y resolución](#p3-ejercicio-2) · [`Ejercicio2.java`](Codigos/Parte3/Ejercicio2.java) |
+| 📙 3 | Ejercicio 3 | Añadir 2 asignaturas a `materias.txt` (modo *append*) | [Enunciado y resolución](#p3-ejercicio-3) · [`Ejercicio3.java`](Codigos/Parte3/Ejercicio3.java) |
+| 📙 3 | Ejercicio 4 | Crear y borrar `datos/temporal.txt` con confirmación | [Enunciado y resolución](#p3-ejercicio-4) · [`Ejercicio4.java`](Codigos/Parte3/Ejercicio4.java) |
+| 💻 | Código fuente | Los diez programas Java, organizados por parte | [`Codigos/`](Codigos/) |
+| 📄 | Documentación | Enunciados e informes de resolución de las tres partes | [`docs/`](docs/) |
 | ▶️ | Ejecución | Cómo compilar y correr los programas | [Instrucciones de ejecución](#instrucciones-de-ejecución) |
 
 ---
@@ -86,26 +99,36 @@
 
 ## 📖 Descripción general
 
-Este repositorio contiene la **APE 5** de Programación Orientada a Objetos, dividida en dos partes. Todos los programas usan únicamente la API estándar de Java (`java.io` y `java.util.Scanner`): no hay librerías externas ni gestores de dependencias; basta con tener un JDK instalado.
+Este repositorio contiene la **APE 5** de Programación Orientada a Objetos, dividida en tres partes. Todos los programas usan únicamente la API estándar de Java (`java.io` y `java.util.Scanner`): no hay librerías externas ni gestores de dependencias; basta con tener un JDK instalado.
 
 - 📘 **Parte 1:** tres programas que practican las operaciones básicas sobre archivos de texto: **crear**, **escribir** y **eliminar** un fichero.
 - 📗 **Parte 2:** tres programas que **registran datos ingresados por teclado** en archivos usando `BufferedWriter`, con cálculos, bucles y modo *append*.
+- 📙 **Parte 3:** cuatro programas sobre **metadatos con `File`**, **escritura por líneas con `BufferedWriter`**, el **modo de apertura** (*append* vs sobrescribir) y el **ciclo de vida completo** de un archivo con borrado confirmado. Usan datos predefinidos en el código (no piden datos por teclado).
 
 ### 📘 Parte 1
 
 | N.º | Programa | Qué hace | Archivo que utiliza |
 |:-:|---|---|---|
-| 1 | [`CrearCurso.java`](Codigos/CrearCurso.java) | Crea un archivo vacío e informa si se creó o ya existía | `curso.txt` |
-| 2 | [`EscribirArchivo.java`](Codigos/EscribirArchivo.java) | Lee un mensaje por teclado y lo agrega al final del archivo | `estudiantes.txt` |
-| 3 | [`EliminarArchivo.java`](Codigos/EliminarArchivo.java) | Elimina el archivo e informa del resultado | `estudiantes.txt` |
+| 1 | [`CrearCurso.java`](Codigos/Parte%201/CrearCurso.java) | Crea un archivo vacío e informa si se creó o ya existía | `curso.txt` |
+| 2 | [`EscribirArchivo.java`](Codigos/Parte%201/EscribirArchivo.java) | Lee un mensaje por teclado y lo agrega al final del archivo | `estudiantes.txt` |
+| 3 | [`EliminarArchivo.java`](Codigos/Parte%201/EliminarArchivo.java) | Elimina el archivo e informa del resultado | `estudiantes.txt` |
 
 ### 📗 Parte 2
 
 | N.º | Programa | Qué hace | Archivo que utiliza |
 |:-:|---|---|---|
-| 1 | [`Ejercicio1.java`](Codigos/Ejercicio1.java) | Pide nombre y calificación de 3 estudiantes y los guarda (dos líneas por estudiante) | `estudiantes.txt` |
-| 2 | [`Ejercicio2.java`](Codigos/Ejercicio2.java) | Registra productos, calcula precio × cantidad y los agrega sin borrar los anteriores | `productos.txt` |
-| 3 | [`Ejercicio3.java`](Codigos/Ejercicio3.java) | Registra ventas hasta escribir `fin`, aplica 10 % de descuento si el subtotal ≥ $100 y guarda el total acumulado | `ventas.txt` |
+| 1 | [`Ejercicio1.java`](Codigos/Parte%202/Ejercicio1.java) | Pide nombre y calificación de 3 estudiantes y los guarda (dos líneas por estudiante) | `estudiantes.txt` |
+| 2 | [`Ejercicio2.java`](Codigos/Parte%202/Ejercicio2.java) | Registra productos, calcula precio × cantidad y los agrega sin borrar los anteriores | `productos.txt` |
+| 3 | [`Ejercicio3.java`](Codigos/Parte%202/Ejercicio3.java) | Registra ventas hasta escribir `fin`, aplica 10 % de descuento si el subtotal ≥ $100 y guarda el total acumulado | `ventas.txt` |
+
+### 📙 Parte 3
+
+| N.º | Programa | Qué hace | Archivo que utiliza |
+|:-:|---|---|---|
+| 1 | [`Ejercicio1.java`](Codigos/Parte3/Ejercicio1.java) | Verifica con `exists()`, crea si falta y muestra `getName()` y `getPath()` | `datos/prueba.txt` |
+| 2 | [`Ejercicio2.java`](Codigos/Parte3/Ejercicio2.java) | Escribe 5 asignaturas, una por línea, con `BufferedWriter` + `newLine()` | `materias.txt` |
+| 3 | [`Ejercicio3.java`](Codigos/Parte3/Ejercicio3.java) | Abre en modo *append* y añade 2 asignaturas al final | `materias.txt` |
+| 4 | [`Ejercicio4.java`](Codigos/Parte3/Ejercicio4.java) | Crea el archivo si no existe y lo borra solo si `confirmarBorrado` es `true` | `datos/temporal.txt` |
 
 [↑ Volver al índice](#índice)
 
@@ -119,39 +142,57 @@ Este repositorio contiene la **APE 5** de Programación Orientada a Objetos, div
 APE_5_Primera_Parte/
 ├── README.md                          # Este documento (descripción principal)
 ├── Codigos/                           # Código fuente de los ejercicios
-│   ├── CrearCurso.java                # Parte 1 · Ejercicio 1
-│   ├── EscribirArchivo.java           # Parte 1 · Ejercicio 2
-│   ├── EliminarArchivo.java           # Parte 1 · Ejercicio 3
-│   ├── Ejercicio1.java                # Parte 2 · Ejercicio 1
-│   ├── Ejercicio2.java                # Parte 2 · Ejercicio 2
-│   ├── Ejercicio3.java                # Parte 2 · Ejercicio 3
+│   ├── Parte 1/
+│   │   ├── CrearCurso.java            # Parte 1 · Ejercicio 1
+│   │   ├── EscribirArchivo.java       # Parte 1 · Ejercicio 2
+│   │   └── EliminarArchivo.java       # Parte 1 · Ejercicio 3
+│   ├── Parte 2/
+│   │   ├── Ejercicio1.java            # Parte 2 · Ejercicio 1
+│   │   ├── Ejercicio2.java            # Parte 2 · Ejercicio 2
+│   │   └── Ejercicio3.java            # Parte 2 · Ejercicio 3
+│   ├── Parte3/                        # package Parte3
+│   │   ├── Ejercicio1.java            # Parte 3 · Ejercicio 1
+│   │   ├── Ejercicio2.java            # Parte 3 · Ejercicio 2
+│   │   ├── Ejercicio3.java            # Parte 3 · Ejercicio 3
+│   │   └── Ejercicio4.java            # Parte 3 · Ejercicio 4
 │   └── readme.md
 └── docs/                              # Documentos de la actividad
     ├── APE 5 primera parte.docx       # Parte 1 · Enunciado de los ejercicios
     ├── Ape 5 resolución.pdf           # Parte 1 · Informe con la resolución
     ├── Ejercicios de APE clase 2.pdf  # Parte 2 · Enunciado de los ejercicios
     ├── Ape 5 resolución Parte2.pdf    # Parte 2 · Informe con la resolución
+    ├── Ejercicios Ape 5.docx          # Parte 3 · Enunciado de los ejercicios
+    ├── Ape_5Parte3 (1).pdf            # Informe final: resolución de las partes 1, 2 y 3
     └── readme.md
 ```
 
 | Ruta | Parte | Contenido |
 |---|:-:|---|
-| [`Codigos/`](Codigos/) | 1 y 2 | Seis clases Java, cada una con su propio `main`, sin paquetes ni dependencias entre sí |
-| [`Codigos/CrearCurso.java`](Codigos/CrearCurso.java) | 📘 1 | Solución del Ejercicio 1 |
-| [`Codigos/EscribirArchivo.java`](Codigos/EscribirArchivo.java) | 📘 1 | Solución del Ejercicio 2 |
-| [`Codigos/EliminarArchivo.java`](Codigos/EliminarArchivo.java) | 📘 1 | Solución del Ejercicio 3 |
-| [`Codigos/Ejercicio1.java`](Codigos/Ejercicio1.java) | 📗 2 | Solución del Ejercicio 1 |
-| [`Codigos/Ejercicio2.java`](Codigos/Ejercicio2.java) | 📗 2 | Solución del Ejercicio 2 |
-| [`Codigos/Ejercicio3.java`](Codigos/Ejercicio3.java) | 📗 2 | Solución del Ejercicio 3 |
-| [`docs/`](docs/) | 1 y 2 | Material de la actividad |
+| [`Codigos/`](Codigos/) | 1, 2 y 3 | Diez clases Java, cada una con su propio `main`, organizadas en una subcarpeta por parte |
+| [`Codigos/Parte 1/`](Codigos/Parte%201/) | 📘 1 | Tres clases sin `package` |
+| [`Codigos/Parte 2/`](Codigos/Parte%202/) | 📗 2 | Tres clases sin `package` |
+| [`Codigos/Parte3/`](Codigos/Parte3/) | 📙 3 | Cuatro clases que declaran `package Parte3;` |
+| [`Codigos/Parte 1/CrearCurso.java`](Codigos/Parte%201/CrearCurso.java) | 📘 1 | Solución del Ejercicio 1 |
+| [`Codigos/Parte 1/EscribirArchivo.java`](Codigos/Parte%201/EscribirArchivo.java) | 📘 1 | Solución del Ejercicio 2 |
+| [`Codigos/Parte 1/EliminarArchivo.java`](Codigos/Parte%201/EliminarArchivo.java) | 📘 1 | Solución del Ejercicio 3 |
+| [`Codigos/Parte 2/Ejercicio1.java`](Codigos/Parte%202/Ejercicio1.java) | 📗 2 | Solución del Ejercicio 1 |
+| [`Codigos/Parte 2/Ejercicio2.java`](Codigos/Parte%202/Ejercicio2.java) | 📗 2 | Solución del Ejercicio 2 |
+| [`Codigos/Parte 2/Ejercicio3.java`](Codigos/Parte%202/Ejercicio3.java) | 📗 2 | Solución del Ejercicio 3 |
+| [`Codigos/Parte3/Ejercicio1.java`](Codigos/Parte3/Ejercicio1.java) | 📙 3 | Solución del Ejercicio 1 |
+| [`Codigos/Parte3/Ejercicio2.java`](Codigos/Parte3/Ejercicio2.java) | 📙 3 | Solución del Ejercicio 2 |
+| [`Codigos/Parte3/Ejercicio3.java`](Codigos/Parte3/Ejercicio3.java) | 📙 3 | Solución del Ejercicio 3 |
+| [`Codigos/Parte3/Ejercicio4.java`](Codigos/Parte3/Ejercicio4.java) | 📙 3 | Solución del Ejercicio 4 |
+| [`docs/`](docs/) | 1, 2 y 3 | Material de la actividad |
 | [`docs/APE 5 primera parte.docx`](docs/APE%205%20primera%20parte.docx) | 📘 1 | Enunciado original |
 | [`docs/Ape 5 resolución.pdf`](docs/Ape%205%20resoluci%C3%B3n.pdf) | 📘 1 | Informe entregado, con las capturas del código |
 | [`docs/Ejercicios de APE clase 2.pdf`](docs/Ejercicios%20de%20APE%20clase%202.pdf) | 📗 2 | Enunciado original (05/11/2026) |
 | [`docs/Ape 5 resolución Parte2.pdf`](docs/Ape%205%20resoluci%C3%B3n%20Parte2.pdf) | 📗 2 | Informe entregado, con las capturas del código |
+| [`docs/Ejercicios Ape 5.docx`](docs/Ejercicios%20Ape%205.docx) | 📙 3 | Enunciado original («Módulo: Manejo de Archivos y Flujos de Datos») |
+| [`docs/Ape_5Parte3 (1).pdf`](docs/Ape_5Parte3%20%281%29.pdf) | 📘📗📙 | Informe final consolidado (8 páginas) con la resolución de las tres partes |
 
 Cada carpeta incluye su propio `readme.md` con más detalle: [`Codigos/readme.md`](Codigos/readme.md) y [`docs/readme.md`](docs/readme.md).
 
-> 💡 Los archivos `curso.txt`, `estudiantes.txt`, `productos.txt` y `ventas.txt` **no forman parte del repositorio**: los generan los programas al ejecutarse, en la carpeta desde la que se lanzan.
+> 💡 Los archivos `curso.txt`, `estudiantes.txt`, `productos.txt`, `ventas.txt`, `materias.txt` y la carpeta `datos/` **no forman parte del repositorio**: los generan los programas al ejecutarse, en la carpeta desde la que se lanzan.
 
 [↑ Volver al índice](#índice)
 
@@ -188,9 +229,9 @@ javac -version
 
 | Ejercicio | Tema | Archivo Java | Archivo de texto |
 |:-:|---|---|---|
-| 1 | Crear un fichero | [`CrearCurso.java`](Codigos/CrearCurso.java) | `curso.txt` |
-| 2 | Escribir en un fichero | [`EscribirArchivo.java`](Codigos/EscribirArchivo.java) | `estudiantes.txt` |
-| 3 | Eliminar un fichero | [`EliminarArchivo.java`](Codigos/EliminarArchivo.java) | `estudiantes.txt` |
+| 1 | Crear un fichero | [`CrearCurso.java`](Codigos/Parte%201/CrearCurso.java) | `curso.txt` |
+| 2 | Escribir en un fichero | [`EscribirArchivo.java`](Codigos/Parte%201/EscribirArchivo.java) | `estudiantes.txt` |
+| 3 | Eliminar un fichero | [`EliminarArchivo.java`](Codigos/Parte%201/EliminarArchivo.java) | `estudiantes.txt` |
 
 <a id="ejercicio-1-crear-un-fichero-en-java"></a>
 
@@ -211,7 +252,7 @@ Desarrollar un programa en Java que permita crear un archivo de texto llamado `c
 
 **🧩 Clases y métodos sugeridos:** `File`, `IOException`, `createNewFile()`, `getName()`
 
-**💻 Resolución** · Archivo: [`Codigos/CrearCurso.java`](Codigos/CrearCurso.java)
+**💻 Resolución** · Archivo: [`Codigos/Parte 1/CrearCurso.java`](Codigos/Parte%201/CrearCurso.java)
 
 ```java
 import java.io.File;
@@ -289,7 +330,7 @@ Desarrollar un programa en Java que permita ingresar un mensaje por teclado y al
 
 > **Nota del enunciado:** el archivo `estudiantes.txt` debe existir previamente.
 
-**💻 Resolución** · Archivo: [`Codigos/EscribirArchivo.java`](Codigos/EscribirArchivo.java)
+**💻 Resolución** · Archivo: [`Codigos/Parte 1/EscribirArchivo.java`](Codigos/Parte%201/EscribirArchivo.java)
 
 ```java
 import java.io.FileWriter;
@@ -370,7 +411,7 @@ Desarrollar un programa en Java que permita eliminar el archivo de texto `estudi
 
 **🧩 Clases y métodos sugeridos:** `File`, `delete()`, `if-else`, `System.out.println()`
 
-**💻 Resolución** · Archivo: [`Codigos/EliminarArchivo.java`](Codigos/EliminarArchivo.java)
+**💻 Resolución** · Archivo: [`Codigos/Parte 1/EliminarArchivo.java`](Codigos/Parte%201/EliminarArchivo.java)
 
 ```java
 import java.io.File;
@@ -425,9 +466,9 @@ No se pudo eliminar el archivo. Puede que no exista o que esté en uso.
 
 | Ejercicio | Tema | Nivel | Archivo Java | Archivo de texto |
 |:-:|---|:-:|---|---|
-| 1 | Registro de estudiantes y calificaciones | Básico | [`Ejercicio1.java`](Codigos/Ejercicio1.java) | `estudiantes.txt` |
-| 2 | Registro de productos con modo *append* | Intermedio | [`Ejercicio2.java`](Codigos/Ejercicio2.java) | `productos.txt` |
-| 3 | Sistema de registro de ventas | Intermedio | [`Ejercicio3.java`](Codigos/Ejercicio3.java) | `ventas.txt` |
+| 1 | Registro de estudiantes y calificaciones | Básico | [`Ejercicio1.java`](Codigos/Parte%202/Ejercicio1.java) | `estudiantes.txt` |
+| 2 | Registro de productos con modo *append* | Intermedio | [`Ejercicio2.java`](Codigos/Parte%202/Ejercicio2.java) | `productos.txt` |
+| 3 | Sistema de registro de ventas | Intermedio | [`Ejercicio3.java`](Codigos/Parte%202/Ejercicio3.java) | `ventas.txt` |
 
 <a id="p2-ejercicio-1"></a>
 
@@ -448,7 +489,7 @@ Desarrollar un programa en Java que permita registrar los datos de 3 estudiantes
 
 **🧩 Clases y métodos utilizados:** `Scanner`, `BufferedWriter`, `FileWriter`, `IOException`, `write()`, `newLine()`, *try-with-resources*
 
-**💻 Resolución** · Archivo: [`Codigos/Ejercicio1.java`](Codigos/Ejercicio1.java)
+**💻 Resolución** · Archivo: [`Codigos/Parte 2/Ejercicio1.java`](Codigos/Parte%202/Ejercicio1.java)
 
 ```java
 import java.io.BufferedWriter;
@@ -545,7 +586,7 @@ Desarrollar un programa que permita registrar productos en un archivo llamado `p
 
 **🧩 Clases y métodos utilizados:** `Scanner`, `BufferedWriter`, `FileWriter(nombre, true)`, `Double.parseDouble()`, `Integer.parseInt()`, `do-while`, `NumberFormatException`
 
-**💻 Resolución** · Archivo: [`Codigos/Ejercicio2.java`](Codigos/Ejercicio2.java)
+**💻 Resolución** · Archivo: [`Codigos/Parte 2/Ejercicio2.java`](Codigos/Parte%202/Ejercicio2.java)
 
 ```java
 import java.io.BufferedWriter;
@@ -558,6 +599,7 @@ public class Ejercicio2 {
         Scanner sc = new Scanner(System.in);
         String continuar;
 
+        // true = modo append (no borra registros anteriores)
         try (BufferedWriter bw = new BufferedWriter(new FileWriter("productos.txt", true))) {
             do {
                 System.out.print("Nombre del producto: ");
@@ -612,8 +654,8 @@ El archivo se abre con `new FileWriter("productos.txt", true)` en **modo *append
 | 3 | Solicitar la cantidad | Líneas 20–21 | ✅ |
 | 4 | Calcular precio × cantidad | Línea 23 | ✅ |
 | 5 | Guardar los resultados | Líneas 25–34 | ✅ |
-| 6 | Sin borrar registros anteriores | `do-while` + modo *append* | ✅ |
-| 7 | `BufferedWriter` y modo *append* | Línea 11 | ✅ |
+| 6 | Sin borrar registros anteriores | `do-while` (líneas 13–39) + modo *append* (línea 12) | ✅ |
+| 7 | `BufferedWriter` y modo *append* | Línea 12 | ✅ |
 
 **🖥️ Salida de ejemplo**
 
@@ -651,7 +693,7 @@ Desarrollar un programa en Java que permita registrar las ventas de una tienda y
 
 **🧩 Clases y métodos utilizados:** `Scanner`, `BufferedWriter`, `FileWriter(nombre, true)`, `while (true)` + `break`, `equalsIgnoreCase()`, `if`, `NumberFormatException`
 
-**💻 Resolución** · Archivo: [`Codigos/Ejercicio3.java`](Codigos/Ejercicio3.java)
+**💻 Resolución** · Archivo: [`Codigos/Parte 2/Ejercicio3.java`](Codigos/Parte%202/Ejercicio3.java)
 
 ```java
 import java.io.BufferedWriter;
@@ -755,11 +797,348 @@ Datos guardados en ventas.txt
 
 ---
 
+<a id="parte-3"></a>
+
+## 📙 Parte 3 – Manejo de archivos y flujos de datos (`java.io`)
+
+> 📄 Enunciado: [`Ejercicios Ape 5.docx`](docs/Ejercicios%20Ape%205.docx) · 📝 Resolución: [`Ape_5Parte3 (1).pdf`](docs/Ape_5Parte3%20%281%29.pdf) (páginas 6–8) · 📅 06/11/2026
+
+| Ejercicio | Tema | Archivo Java | Archivo de texto |
+|:-:|---|---|---|
+| 1 | Exploración y gestión de metadatos con `File` | [`Ejercicio1.java`](Codigos/Parte3/Ejercicio1.java) | `datos/prueba.txt` |
+| 2 | Escritura estructurada por líneas con `BufferedWriter` | [`Ejercicio2.java`](Codigos/Parte3/Ejercicio2.java) | `materias.txt` |
+| 3 | Control del modo de apertura (*append* vs sobrescribir) | [`Ejercicio3.java`](Codigos/Parte3/Ejercicio3.java) | `materias.txt` |
+| 4 | Ciclo de vida completo y borrado seguro | [`Ejercicio4.java`](Codigos/Parte3/Ejercicio4.java) | `datos/temporal.txt` |
+
+> 📦 Las cuatro clases declaran `package Parte3;`, por lo que se compilan y ejecutan desde la carpeta `Codigos/` (ver [Instrucciones de ejecución](#instrucciones-de-ejecución)).
+
+<a id="p3-ejercicio-1"></a>
+
+### 🟢 Ejercicio 1. Exploración y gestión de metadatos con `File`
+
+**📌 Enunciado**
+
+Escribir un programa en Java que utilice la clase `File` (paquete `java.io`) para interactuar con la ruta `"datos/prueba.txt"`.
+
+**📋 Indicaciones (requisitos)**
+
+1. **Comprobación previa:** utilizar `exists()` para verificar si la ruta apunta a un recurso disponible en el disco.
+2. **Creación controlada:** si el recurso no existe, crearlo con `createNewFile()`, gestionando obligatoriamente la `IOException` mediante `try-catch`.
+3. **Extracción de información:** tanto si el archivo ya existía como si se acaba de crear, mostrar por consola el último nombre de la ruta (`getName()`) y la ruta con la que se construyó el objeto (`getPath()`).
+
+**🧩 Clases y métodos utilizados:** `File`, `IOException`, `exists()`, `getParentFile().mkdirs()`, `createNewFile()`, `getName()`, `getPath()`
+
+**💻 Resolución** · Archivo: [`Codigos/Parte3/Ejercicio1.java`](Codigos/Parte3/Ejercicio1.java)
+
+```java
+package Parte3;
+import java.io.File;
+import java.io.IOException;
+
+public class Ejercicio1 {
+    public static void main(String[] args) {
+        File archivo = new File("datos/prueba.txt");
+
+        if (archivo.exists()) {
+            System.out.println("El archivo ya existe.");
+        } else {
+            try {
+                archivo.getParentFile().mkdirs(); // crea la carpeta "datos" si no existe
+                boolean creado = archivo.createNewFile();
+                if (creado) {
+                    System.out.println("Archivo creado exitosamente.");
+                }
+            } catch (IOException e) {
+                System.out.println("Error al crear el archivo: " + e.getMessage());
+            }
+        }
+
+        System.out.println("Nombre : " + archivo.getName());
+        System.out.println("Ruta   : " + archivo.getPath());
+    }
+}
+```
+
+**🔍 Descripción de la solución**
+
+Se crea un objeto `File` con la ruta relativa `datos/prueba.txt`. Primero se consulta `exists()`: si el archivo ya está en disco se informa y no se toca. Si no existe, dentro de un `try-catch` se crea la carpeta padre con `getParentFile().mkdirs()` (necesario porque `createNewFile()` falla si la carpeta `datos` no existe) y luego el archivo con `createNewFile()`. Fuera del `if-else`, es decir, **en ambos casos**, se muestran `getName()` (`prueba.txt`) y `getPath()` (`datos/prueba.txt`).
+
+**✅ Cumplimiento de los requisitos**
+
+| # | Requisito | Dónde se cumple | Estado |
+|:-:|---|---|:-:|
+| — | Objeto `File` con la ruta `datos/prueba.txt` | Línea 7 | ✅ |
+| 1 | Comprobación previa con `exists()` | Línea 9 | ✅ |
+| 2 | Creación con `createNewFile()` y `IOException` en `try-catch` | Líneas 12–20 (creación en la 14) | ✅ |
+| 3 | Mostrar `getName()` y `getPath()` en ambos casos | Líneas 23–24, fuera del `if-else` | ✅ |
+
+**🖥️ Salida de ejemplo**
+
+```text
+# Primera ejecución
+Archivo creado exitosamente.
+Nombre : prueba.txt
+Ruta   : datos/prueba.txt
+
+# Segunda ejecución (el archivo ya existe)
+El archivo ya existe.
+Nombre : prueba.txt
+Ruta   : datos/prueba.txt
+```
+
+> En Windows, `getPath()` muestra la ruta con barra invertida: `datos\prueba.txt`.
+
+[↑ Volver al índice](#índice)
+
+---
+
+<a id="p3-ejercicio-2"></a>
+
+### 🟡 Ejercicio 2. Escritura estructurada por líneas con `BufferedWriter`
+
+**📌 Enunciado**
+
+Desarrollar un programa en Java que cree un fichero de texto llamado `"materias.txt"`, tomando como referencia el flujo de datos desde la memoria RAM hasta el archivo en disco.
+
+**📋 Indicaciones (requisitos)**
+
+1. Configurar un flujo de salida con un objeto `BufferedWriter` enlazado con un `FileWriter`.
+2. Escribir un listado de cinco asignaturas en el archivo.
+3. Emplear el método portable `newLine()` para que cada asignatura quede en una línea independiente.
+4. Liberar los recursos con `close()` y controlar los errores de escritura con `IOException`.
+5. **Verificación:** comprobar en la carpeta del proyecto que el archivo se generó con una asignatura por línea.
+
+**🧩 Clases y métodos utilizados:** `BufferedWriter`, `FileWriter`, `IOException`, `write()`, `newLine()`, `close()`
+
+**💻 Resolución** · Archivo: [`Codigos/Parte3/Ejercicio2.java`](Codigos/Parte3/Ejercicio2.java)
+
+```java
+package Parte3;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class Ejercicio2 {
+    public static void main(String[] args) {
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter("materias.txt"));
+
+            writer.write("Programación Orientada a Objetos");
+            writer.newLine();
+            writer.write("Cálculo Diferencial");
+            writer.newLine();
+            writer.write("Metodología de la Investigación");
+            writer.newLine();
+            writer.write("Álgebra Lineal");
+            writer.newLine();
+            writer.write("Inglés Técnico");
+            writer.newLine();
+
+            writer.close();
+            System.out.println("Archivo materias.txt creado correctamente.");
+        } catch (IOException e) {
+            System.out.println("Error al escribir el archivo: " + e.getMessage());
+        }
+    }
+}
+```
+
+**🔍 Descripción de la solución**
+
+El `BufferedWriter` envuelve a un `FileWriter` abierto **sin** el parámetro `true`, por lo que el archivo se crea (o se sobrescribe) en cada ejecución. Los datos pasan primero por el búfer en memoria y se vuelcan al disco al llamar a `close()`. Se escriben cinco asignaturas, cada una seguida de `newLine()`, que usa el separador de línea propio del sistema operativo. Todo está dentro de un `try-catch` que captura `IOException`.
+
+**✅ Cumplimiento de los requisitos**
+
+| # | Requisito | Dónde se cumple | Estado |
+|:-:|---|---|:-:|
+| 1 | `BufferedWriter` enlazado con `FileWriter` | Línea 9 | ✅ |
+| 2 | Cinco asignaturas | Líneas 11, 13, 15, 17 y 19 | ✅ |
+| 3 | `newLine()` después de cada asignatura | Líneas 12, 14, 16, 18 y 20 | ✅ |
+| 4 | `close()` e `IOException` | Línea 22 y líneas 24–26 | ✅ |
+| 5 | Verificación del archivo generado | Ver contenido de `materias.txt` abajo | ✅ |
+
+**🖥️ Salida de ejemplo**
+
+```text
+Archivo materias.txt creado correctamente.
+```
+
+Contenido de `materias.txt` (una asignatura por línea):
+
+```text
+Programación Orientada a Objetos
+Cálculo Diferencial
+Metodología de la Investigación
+Álgebra Lineal
+Inglés Técnico
+```
+
+[↑ Volver al índice](#índice)
+
+---
+
+<a id="p3-ejercicio-3"></a>
+
+### 🟠 Ejercicio 3. Control del modo de apertura (*append* vs sobrescribir)
+
+**📌 Enunciado**
+
+A partir del archivo `"materias.txt"` generado en el ejercicio anterior, escribir un nuevo programa que demuestre el comportamiento del segundo parámetro del constructor de `FileWriter`.
+
+**📋 Indicaciones (requisitos)**
+
+1. Abrir el fichero existente configurando el `FileWriter` en modo de adición (`append = true`).
+2. Añadir dos nuevas asignaturas al final del archivo usando `newLine()` para no romper el formato.
+3. Cerrar el flujo con `close()`.
+4. **Comprobación:** verificar que el contenido previo no se sobrescribió y que el archivo conserva las cinco asignaturas originales más las dos nuevas al final.
+
+**🧩 Clases y métodos utilizados:** `BufferedWriter`, `FileWriter(nombre, true)`, `IOException`, `write()`, `newLine()`, `close()`
+
+**💻 Resolución** · Archivo: [`Codigos/Parte3/Ejercicio3.java`](Codigos/Parte3/Ejercicio3.java)
+
+```java
+package Parte3;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class Ejercicio3 {
+    public static void main(String[] args) {
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter("materias.txt", true));
+
+            writer.write("Física General");
+            writer.newLine();
+            writer.write("Estadística y Probabilidad");
+            writer.newLine();
+
+            writer.close();
+            System.out.println("Asignaturas añadidas al final del archivo.");
+        } catch (IOException e) {
+            System.out.println("Error al añadir al archivo: " + e.getMessage());
+        }
+    }
+}
+```
+
+**🔍 Descripción de la solución**
+
+La única diferencia clave con el Ejercicio 2 está en la línea 9: `new FileWriter("materias.txt", true)`. Con `true` el archivo se abre en **modo *append***, de modo que la escritura empieza al final y no se borra nada. Si se usara `false` (o se omitiera el parámetro), el archivo se vaciaría y solo quedarían las dos asignaturas nuevas. Se agregan dos asignaturas con `newLine()` y se cierra el flujo.
+
+**✅ Cumplimiento de los requisitos**
+
+| # | Requisito | Dónde se cumple | Estado |
+|:-:|---|---|:-:|
+| 1 | `FileWriter` en modo *append* (`true`) | Línea 9 | ✅ |
+| 2 | Dos asignaturas nuevas con `newLine()` | Líneas 11–14 | ✅ |
+| 3 | `close()` | Línea 16 | ✅ |
+| 4 | Conserva las 5 originales + 2 nuevas | Ver contenido de `materias.txt` abajo | ✅ |
+
+**🖥️ Salida de ejemplo** (después de ejecutar el Ejercicio 2)
+
+```text
+Asignaturas añadidas al final del archivo.
+```
+
+Contenido de `materias.txt` (las líneas 6 y 7 son las nuevas):
+
+```text
+Programación Orientada a Objetos
+Cálculo Diferencial
+Metodología de la Investigación
+Álgebra Lineal
+Inglés Técnico
+Física General
+Estadística y Probabilidad
+```
+
+> Si se ejecuta el Ejercicio 3 varias veces, las dos asignaturas se vuelven a agregar en cada ejecución; ejecutar de nuevo el Ejercicio 2 deja el archivo con las cinco originales.
+
+[↑ Volver al índice](#índice)
+
+---
+
+<a id="p3-ejercicio-4"></a>
+
+### 🔴 Ejercicio 4. Ciclo de vida completo y borrado seguro
+
+**📌 Enunciado**
+
+Diseñar un programa completo en Java que emule el recorrido guiado de gestión de ficheros visto en clase.
+
+**📋 Indicaciones (requisitos)**
+
+1. Construir un objeto `File` que represente la ruta `"datos/temporal.txt"`.
+2. Consultar el estado del archivo con `exists()` y, si no está disponible, crearlo de forma segura controlando la `IOException`.
+3. Declarar una variable de control booleana (por ejemplo, `boolean confirmarBorrado = true;`) que simule la confirmación del usuario antes de eliminar datos.
+4. Usar `delete()` exclusivamente si la confirmación es verdadera, imprimiendo el resultado booleano de la eliminación.
+
+**🧩 Clases y métodos utilizados:** `File`, `IOException`, `exists()`, `getParentFile().mkdirs()`, `createNewFile()`, `delete()`, variable `boolean`
+
+**💻 Resolución** · Archivo: [`Codigos/Parte3/Ejercicio4.java`](Codigos/Parte3/Ejercicio4.java)
+
+```java
+package Parte3;
+import java.io.File;
+import java.io.IOException;
+
+public class Ejercicio4 {
+    public static void main(String[] args) {
+        File archivo = new File("datos/temporal.txt");
+
+        if (!archivo.exists()) {
+            try {
+                archivo.getParentFile().mkdirs(); // crea la carpeta "datos" si no existe
+                archivo.createNewFile();
+                System.out.println("Archivo creado: datos/temporal.txt");
+            } catch (IOException e) {
+                System.out.println("Error al crear el archivo: " + e.getMessage());
+            }
+        } else {
+            System.out.println("El archivo ya existe.");
+        }
+
+        boolean confirmarBorrado = true;
+
+        if (confirmarBorrado) {
+            boolean resultado = archivo.delete();
+            System.out.println("Resultado de la eliminación: " + resultado);
+        }
+    }
+}
+```
+
+**🔍 Descripción de la solución**
+
+El programa recorre el ciclo de vida completo de un archivo: **construir → consultar → crear → confirmar → eliminar**. Se crea el objeto `File` para `datos/temporal.txt`; si `exists()` devuelve `false`, se crean la carpeta `datos` y el archivo dentro de un `try-catch`. Luego, la variable `confirmarBorrado` simula la respuesta del usuario: solo si es `true` se llama a `delete()` y se imprime su resultado booleano. Como el archivo se borra al final, cada ejecución lo vuelve a crear.
+
+**✅ Cumplimiento de los requisitos**
+
+| # | Requisito | Dónde se cumple | Estado |
+|:-:|---|---|:-:|
+| 1 | Objeto `File` para `datos/temporal.txt` | Línea 7 | ✅ |
+| 2 | `exists()` y creación segura con `IOException` | Líneas 9–19 | ✅ |
+| 3 | Variable de control `boolean confirmarBorrado = true;` | Línea 21 | ✅ |
+| 4 | `delete()` solo si se confirma, mostrando el resultado | Líneas 23–26 | ✅ |
+
+**🖥️ Salida de ejemplo**
+
+```text
+Archivo creado: datos/temporal.txt
+Resultado de la eliminación: true
+```
+
+> Si se cambia a `boolean confirmarBorrado = false;`, el archivo se crea pero no se elimina y no se imprime el resultado.
+
+[↑ Volver al índice](#índice)
+
+---
+
 <a id="instrucciones-de-ejecución"></a>
 
 ## ▶️ Instrucciones de ejecución
 
-Los seis programas están en [`Codigos/`](Codigos/) y se ejecutan **desde esa carpeta**.
+Los diez programas están en [`Codigos/`](Codigos/), separados en una subcarpeta por parte. Los archivos `.txt` se crean en la carpeta desde la que se lanza `java`.
 
 ### 1️⃣ Obtener el proyecto
 
@@ -768,39 +1147,62 @@ git clone https://github.com/LeyberP/APE_5_Primera_Parte.git
 cd APE_5_Primera_Parte/Codigos
 ```
 
-### 2️⃣ Compilar
+Sin Git, descarga el ZIP desde GitHub con **Code → Download ZIP**, descomprímelo y abre una terminal dentro de `Codigos/`.
+
+### 2️⃣ Ejecutar la Parte 1 (en orden recomendado)
 
 ```bash
+cd "Parte 1"
 javac *.java
-```
-
-### 3️⃣ Ejecutar la Parte 1 (en orden recomendado)
-
-```bash
 java CrearCurso          # Ejercicio 1: crea curso.txt
-touch estudiantes.txt    # Preparación para Ejercicio 2
+touch estudiantes.txt    # Preparación para el Ejercicio 2 (PowerShell: New-Item estudiantes.txt -ItemType File)
 java EscribirArchivo     # Ejercicio 2: escribe en estudiantes.txt
 java EliminarArchivo     # Ejercicio 3: elimina estudiantes.txt
+cd ..
 ```
 
-### 4️⃣ Ejecutar la Parte 2
+### 3️⃣ Ejecutar la Parte 2
 
 ```bash
+cd "Parte 2"
+javac *.java
 java Ejercicio1          # Registra 3 estudiantes en estudiantes.txt
-java Ejercicio2          # Registra productos en productos.txt
-java Ejercicio3          # Registra ventas en ventas.txt
+java Ejercicio2          # Registra productos en productos.txt (responde s/n)
+java Ejercicio3          # Registra ventas en ventas.txt (escribe fin para terminar)
+cd ..
 ```
+
+### 4️⃣ Ejecutar la Parte 3 (desde `Codigos/`, por el `package Parte3`)
+
+```bash
+javac Parte3/*.java
+java Parte3.Ejercicio1   # Comprueba/crea datos/prueba.txt y muestra nombre y ruta
+java Parte3.Ejercicio2   # Crea materias.txt con 5 asignaturas
+java Parte3.Ejercicio3   # Añade 2 asignaturas a materias.txt
+java Parte3.Ejercicio4   # Crea y borra datos/temporal.txt
+```
+
+En Windows usa `javac Parte3\*.java`. Ejecuta el **Ejercicio 2 antes que el 3**, porque el 3 parte del archivo creado por el 2.
 
 ### 📊 Resumen por ejercicio
 
-| Parte | Ejercicio | Ejecutar | Efecto |
-|:-:|:-:|---|---|
-| 📘 1 | 1 | `java CrearCurso` | Crea `curso.txt` |
-| 📘 1 | 2 | `java EscribirArchivo` | Agrega mensaje a `estudiantes.txt` |
-| 📘 1 | 3 | `java EliminarArchivo` | Elimina `estudiantes.txt` |
-| 📗 2 | 1 | `java Ejercicio1` | Guarda 3 estudiantes en `estudiantes.txt` |
-| 📗 2 | 2 | `java Ejercicio2` | Agrega productos a `productos.txt` |
-| 📗 2 | 3 | `java Ejercicio3` | Agrega ventas y total a `ventas.txt` |
+| Parte | Ejercicio | Carpeta de trabajo | Ejecutar | Efecto |
+|:-:|:-:|---|---|---|
+| 📘 1 | 1 | `Codigos/Parte 1` | `java CrearCurso` | Crea `curso.txt` |
+| 📘 1 | 2 | `Codigos/Parte 1` | `java EscribirArchivo` | Agrega un mensaje a `estudiantes.txt` |
+| 📘 1 | 3 | `Codigos/Parte 1` | `java EliminarArchivo` | Elimina `estudiantes.txt` |
+| 📗 2 | 1 | `Codigos/Parte 2` | `java Ejercicio1` | Guarda 3 estudiantes en `estudiantes.txt` |
+| 📗 2 | 2 | `Codigos/Parte 2` | `java Ejercicio2` | Agrega productos a `productos.txt` |
+| 📗 2 | 3 | `Codigos/Parte 2` | `java Ejercicio3` | Agrega ventas y total a `ventas.txt` |
+| 📙 3 | 1 | `Codigos` | `java Parte3.Ejercicio1` | Crea `datos/prueba.txt` (si falta) y muestra nombre y ruta |
+| 📙 3 | 2 | `Codigos` | `java Parte3.Ejercicio2` | Crea `materias.txt` con 5 asignaturas |
+| 📙 3 | 3 | `Codigos` | `java Parte3.Ejercicio3` | Añade 2 asignaturas al final de `materias.txt` |
+| 📙 3 | 4 | `Codigos` | `java Parte3.Ejercicio4` | Crea y elimina `datos/temporal.txt` |
+
+### 🔧 Alternativas
+
+- **Desde un IDE (IntelliJ, Eclipse, VS Code, NetBeans):** abre la carpeta `Codigos/` como proyecto y ejecuta el `main` de cada clase. Los `.txt` y la carpeta `datos/` se crean en la carpeta de trabajo del IDE (normalmente la raíz del proyecto).
+- **Tildes o ñ mal mostradas:** compila con `javac -encoding UTF-8` y pon la consola en UTF-8 (en Windows: `chcp 65001`).
 
 [↑ Volver al índice](#índice)
 
@@ -810,19 +1212,25 @@ java Ejercicio3          # Registra ventas en ventas.txt
 
 ## 🧠 Conceptos aplicados
 
-| Clase / método | Para qué se usa | Parte 1 | Parte 2 |
-|---|---|:-:|:-:|
-| `java.io.File` | Representa la ruta de un archivo | Ej. 1, 3 | — |
-| `File.createNewFile()` | Crea un archivo vacío | Ej. 1 | — |
-| `File.delete()` | Elimina el archivo | Ej. 3 | — |
-| `java.util.Scanner` / `nextLine()` | Lee línea completa desde teclado | Ej. 2 | Ej. 1, 2, 3 |
-| `java.io.FileWriter(nombre)` | Abre el archivo sobrescribiendo | — | Ej. 1 |
-| `java.io.FileWriter(nombre, true)` | Abre en modo *append* | Ej. 2 | Ej. 2, 3 |
-| `java.io.BufferedWriter` / `write()` / `newLine()` | Escritura con búfer y saltos de línea | — | Ej. 1, 2, 3 |
-| *try-with-resources* | Cierra el archivo automáticamente | — | Ej. 1, 2, 3 |
-| `Double.parseDouble()` / `Integer.parseInt()` | Convierte texto a número | — | Ej. 2, 3 |
-| `for`, `do-while`, `while (true)` + `break` | Control de repetición | — | Ej. 1, 2, 3 |
-| `IOException` / `NumberFormatException` | Control de errores | Ej. 1, 2 | Ej. 1, 2, 3 |
+| Clase / método | Para qué se usa | Parte 1 | Parte 2 | Parte 3 |
+|---|---|:-:|:-:|:-:|
+| `java.io.File` | Representa la ruta de un archivo | Ej. 1, 3 | — | Ej. 1, 4 |
+| `File.exists()` | Comprueba si el archivo está en disco | — | — | Ej. 1, 4 |
+| `File.createNewFile()` | Crea un archivo vacío | Ej. 1 | — | Ej. 1, 4 |
+| `File.getParentFile().mkdirs()` | Crea la carpeta `datos/` si no existe | — | — | Ej. 1, 4 |
+| `File.getName()` / `getPath()` | Consulta el nombre y la ruta del archivo | Ej. 1, 3 (`getName`) | — | Ej. 1 |
+| `File.delete()` | Elimina el archivo | Ej. 3 | — | Ej. 4 |
+| `java.util.Scanner` / `nextLine()` | Lee una línea completa desde teclado | Ej. 2 | Ej. 1, 2, 3 | — |
+| `java.io.FileWriter(nombre)` | Abre el archivo sobrescribiendo | — | Ej. 1 | Ej. 2 |
+| `java.io.FileWriter(nombre, true)` | Abre en modo *append* | Ej. 2 | Ej. 2, 3 | Ej. 3 |
+| `java.io.BufferedWriter` / `write()` / `newLine()` | Escritura con búfer y saltos de línea portables | — | Ej. 1, 2, 3 | Ej. 2, 3 |
+| `close()` explícito | Vuelca el búfer y libera el archivo | Ej. 2 | — | Ej. 2, 3 |
+| *try-with-resources* | Cierra el archivo automáticamente | — | Ej. 1, 2, 3 | — |
+| `Double.parseDouble()` / `Integer.parseInt()` | Convierte texto a número | — | Ej. 2, 3 | — |
+| `for`, `do-while`, `while (true)` + `break` | Control de repetición | — | Ej. 1, 2, 3 | — |
+| Variable `boolean` de control | Simula la confirmación antes de borrar | — | — | Ej. 4 |
+| `IOException` / `NumberFormatException` | Control de errores | Ej. 1, 2 | Ej. 1, 2, 3 | Ej. 1–4 (`IOException`) |
+| `package` | Agrupa las clases de una parte | — | — | Ej. 1–4 (`Parte3`) |
 
 [↑ Volver al índice](#índice)
 
@@ -834,9 +1242,12 @@ java Ejercicio3          # Registra ventas en ventas.txt
 
 - **Orden de ejecución (Parte 1).** El Ejercicio 3 borra `estudiantes.txt`; si se ejecuta antes que el 2 mostrará el mensaje de que no se pudo eliminar.
 - **Archivo previo en el Ejercicio 2 (Parte 1).** El enunciado indica que `estudiantes.txt` debe existir antes. Al usar `FileWriter` con `true`, Java lo crea si no existe.
-- **`estudiantes.txt` compartido.** El Ejercicio 1 de la Parte 2 usa el mismo nombre de archivo que la Parte 1 y lo **sobrescribe** (abre `FileWriter` sin `true`).
+- **`estudiantes.txt` compartido.** El Ejercicio 1 de la Parte 2 usa el mismo nombre de archivo que la Parte 1 y lo **sobrescribe** (abre `FileWriter` sin `true`). Al ejecutarse cada parte en su propia subcarpeta, cada una genera su propio archivo.
 - **Modo *append* en la Parte 2.** `productos.txt` y `ventas.txt` acumulan datos entre ejecuciones.
-- **Números no válidos.** Si se ingresa texto donde se espera un número, el programa muestra el error y termina; lo registrado antes del error queda guardado.
+- **Números no válidos (Parte 2).** Si se ingresa texto donde se espera un número, el programa muestra el error y termina; lo registrado antes del error queda guardado.
+- **Orden en la Parte 3.** El Ejercicio 3 añade a `materias.txt`; conviene ejecutar antes el Ejercicio 2. Si `materias.txt` no existe, el Ejercicio 3 lo crea solo con las dos asignaturas nuevas.
+- **Carpeta `datos/` (Parte 3).** Los Ejercicios 1 y 4 la crean con `mkdirs()` si no existe. El Ejercicio 4 borra `temporal.txt`, pero la carpeta `datos/` (y `prueba.txt` del Ejercicio 1) se mantienen.
+- **`package Parte3`.** Las clases de la Parte 3 deben compilarse y ejecutarse desde `Codigos/` con el nombre completo (`java Parte3.Ejercicio1`); si se ejecuta `java Ejercicio1` dentro de `Parte3/` aparecerá un error de clase no encontrada.
 - **Ubicación de los archivos.** Los `.txt` se crean en la carpeta desde la que se lanza `java`.
 
 [↑ Volver al índice](#índice)
@@ -853,6 +1264,8 @@ java Ejercicio3          # Registra ventas en ventas.txt
 | 📘 1 | [`Ape 5 resolución.pdf`](docs/Ape%205%20resoluci%C3%B3n.pdf) | Informe | Informe con los datos del estudiante y capturas del código |
 | 📗 2 | [`Ejercicios de APE clase 2.pdf`](docs/Ejercicios%20de%20APE%20clase%202.pdf) | Enunciado | «Ejercicios de APE clase 2» (05/11/2026): registro de estudiantes, productos y ventas |
 | 📗 2 | [`Ape 5 resolución Parte2.pdf`](docs/Ape%205%20resoluci%C3%B3n%20Parte2.pdf) | Informe | Informe con los datos del estudiante, enlace al repositorio y capturas del código |
+| 📙 3 | [`Ejercicios Ape 5.docx`](docs/Ejercicios%20Ape%205.docx) | Enunciado | «Ejercicios APE 5 · Módulo: Manejo de Archivos y Flujos de Datos (`java.io`)»: los cuatro ejercicios de la Parte 3 |
+| 📘📗📙 | [`Ape_5Parte3 (1).pdf`](docs/Ape_5Parte3%20%281%29.pdf) | Informe final | Informe consolidado de 8 páginas: resolución de la Parte 1 (04/11/2026), Parte 2 (05/11/2026) y Parte 3 (06/11/2026), con capturas del código |
 
 📁 Carpeta completa: [`docs/`](docs/)
 
@@ -887,7 +1300,7 @@ java Ejercicio3          # Registra ventas en ventas.txt
 
 **Leyber Peñafiel** · Carrera de Software, Nivel 1, Curso B · Universidad Técnica de Ambato
 
-👨‍🏫 Docente: Ing. José Caiza · 📅 Entregas: 04/11/2026 (Parte 1) y 05/11/2026 (Parte 2)
+👨‍🏫 Docente: Ing. José Caiza · 📅 Entregas: 04/11/2026 (Parte 1), 05/11/2026 (Parte 2) y 06/11/2026 (Parte 3)
 
 🔗 Repositorio: <https://github.com/LeyberP/APE_5_Primera_Parte>
 
